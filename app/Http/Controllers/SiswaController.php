@@ -144,7 +144,20 @@ class SiswaController extends Controller
     public function profile($id){
         $siswa = Siswa::find($id);
         $mataPelajaran = Mapel::all();
-        return view('siswa.profile',['siswa' => $siswa, 'mataPelajaran' => $mataPelajaran]);
+
+        $categories = [];
+        $dataNilai = [];
+
+        foreach($mataPelajaran as $mpl){
+            if($siswa->mapel()->wherePivot('mapel_id',$mpl->id)->first()){
+                $categories[] = $mpl->nama;
+                $dataNilai[] = $siswa->mapel()->wherePivot('mapel_id',$mpl->id)->first()->pivot->nilai;
+            }
+        }
+
+        // dd($dataNilai);
+
+        return view('siswa.profile',['siswa' => $siswa, 'mataPelajaran' => $mataPelajaran, 'categories' => $categories, 'dataNilai' => $dataNilai]);
     }
 
     public function addNilai(Request $request, $idSiswa){
