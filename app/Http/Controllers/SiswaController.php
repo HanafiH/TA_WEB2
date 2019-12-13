@@ -46,8 +46,17 @@ class SiswaController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
+    {  
+        // dd($request->all());
         
+        $this->validate($request,[
+            'nama' => 'required|min:3',
+            'email' => 'required|email|unique:users',
+            'gender' => 'required',
+            'agama' => 'required',
+            'avatar' => 'mimes:jpg,png'
+        ]);
+
         //insert table users
         $user = new User;
         $user->role = 'siswa';
@@ -60,6 +69,12 @@ class SiswaController extends Controller
         //insert table siswa
         $request->request->add(['user_id' => $user->id]);
         $siswa = Siswa::create($request->all());
+        if($request->hasFile('avatar')){
+            $request->file('avatar')->move('images/',$request->file('avatar')->getClientOriginalName());
+            $siswa->avatar = $request->file('avatar')->getClientOriginalName();
+            $siswa->save();
+        }
+
         return redirect('/siswa')->with('sukses','Data berhasil diinput');
     }
 

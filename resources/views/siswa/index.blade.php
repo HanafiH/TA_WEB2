@@ -65,30 +65,48 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                <form method="post" action="/siswa/store">
+                <form method="post" action="/siswa/store" enctype="multipart/form-data">
                 @csrf
-                    <div class="form-group">
+                    <div class="form-group {{$errors->has('nama') ? 'has-error' : ''}}">
                         <label for="nama">Nama</label>
-                        <input type="text" class="form-control" id="nama" placeholder="Enter nama" name="nama">
+                        <input value="{{old('nama')}}" type="text" class="form-control" id="nama" placeholder="Enter nama" name="nama" >
+                        @if($errors->has('nama'))
+                            <span class="help-block">{{$errors->first('nama')}}</span>
+                        @endif
                     </div>
-                    <div class="form-group">
+                    <div class="form-group {{$errors->has('email') ? 'has-error' : ''}}">
                         <label for="email">Email</label>
-                        <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                        <input value="{{old('email')}}" type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                        @if($errors->has('email'))
+                            <span class="help-block">{{$errors->first('email')}}</span>
+                        @endif
                     </div>
-                    <div class="form-group">
+                    <div class="form-group {{$errors->has('gender') ? 'has-error' : ''}}">
                         <label for="gender">Jenis Kelamin</label>
                         <select class="form-control" id="gender" name="gender">
-                        <option value="l">Laki-Laki</option>
-                        <option value="p">Perempuan</option>
+                        <option value="l" {{old('gender') == 'l' ? 'selected' : ''}}>Laki-Laki</option>
+                        <option value="p" {{old('gender') == 'p' ? 'selected' : ''}}>Perempuan</option>
                         </select>
+                        @if($errors->has('gender'))
+                            <span class="help-block">{{$errors->first('gender')}}</span>
+                        @endif
                     </div>
-                    <div class="form-group">
+                    <div class="form-group {{$errors->has('agama') ? 'has-error' : ''}}">
                         <label for="agama">Agama</label>
-                        <input type="text" class="form-control" id="agama" placeholder="Enter agama" name="agama">
+                        <input value="{{old('agama')}}" type="text" class="form-control" id="agama" placeholder="Enter agama" name="agama">
+                        @if($errors->has('agama'))
+                            <span class="help-block">{{$errors->first('agama')}}</span>
+                        @endif
                     </div>
                     <div class="form-group">
+                        <label for="avatar">Avatar</label>
+                        <input type="file" name="avatar" id="avatar" class="form-control">
+                        
+                    </div>
+
+                    <div class="form-group ">
                         <label for="alamat">Alamat</label>
-                        <textarea class="form-control" id="alamat" name="alamat" rows="3"></textarea>
+                        <textarea class="form-control" id="alamat" name="alamat" rows="3">{{old('alamat')}}</textarea>
                     </div>
                     
                     
