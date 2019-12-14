@@ -3,9 +3,11 @@
         <nav>
             <ul class="nav">
                 <li>
-                    <a href="/dashboard" class="active">
+                    <a href="/dashboard" class=" ">
                         <i class="lnr lnr-home"></i>
                         <span>Dashboard</span>
+                        {{session('tab')}}
+
                     </a>
                 </li>
                 @if(auth()->user()->role == 'admin')

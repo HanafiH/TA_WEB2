@@ -12,7 +12,9 @@
                     <div class="panel-heading">
                         <h3 class="panel-title">Data Siswa</h3>
                         <div class="right">
-                            <button type="button" class="btn"><i class="lnr lnr-plus-circle" data-toggle="modal" data-target="#exampleModal"></i></button>
+                            <a href="/siswa/exportexcel" class="btn btn-sm btn-primary">Download Excel</a>
+                            <a href="/siswa/exportpdf" class="btn btn-sm btn-primary">Download PDF</a>
+                            <button type="button" class="btn">Tambah siswa<i class="lnr lnr-plus-circle" data-toggle="modal" data-target="#exampleModal"></i></button>
                             <!-- Button trigger modal -->
                             
                         </div>

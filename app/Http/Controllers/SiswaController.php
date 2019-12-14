@@ -1,6 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Exports\SiswaExport;
+use Maatwebsite\Excel\Facades\Excel;
+use PDF;
 
 use App\Mapel;
 use App\Siswa;
@@ -27,7 +30,7 @@ class SiswaController extends Controller
 
         }
 
-        return view('siswa.index',['data_siswa' => $data_siswa]);
+        return view('siswa.index',['data_siswa' => $data_siswa])->with('tab','siswa');
     }
 
     /**
@@ -177,4 +180,15 @@ class SiswaController extends Controller
         return redirect()->back()->with('sukses','Data Nilai Berhasil dihapus');
 
     }
+    public function exportExcel() 
+    {
+        return Excel::download(new SiswaExport, 'siswa.xlsx');
+    }
+
+    public function exportPDF(){
+        $siswa = Siswa::all();
+        $pdf = PDF::loadView('export.siswapdf',['siswa' => $siswa]);
+        return $pdf->download('siswa.pdf');
+    }
+
 }
