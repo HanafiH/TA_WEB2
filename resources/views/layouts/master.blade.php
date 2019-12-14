@@ -18,6 +18,8 @@
         <link rel="stylesheet" href="{{asset('/admin/assets/css/main.css')}}">
         <!-- FOR DEMO PURPOSES ONLY. You should remove this in your project -->
         <link rel="stylesheet" href="{{asset('/admin/assets/css/demo.css')}}">
+        <!-- toaster -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
         @yield('header')
         <!-- GOOGLE FONTS -->
         <link
@@ -58,6 +60,13 @@
         <script src="{{asset('/admin/assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js')}}"></script>
         
         <script src="{{asset('/admin/assets/scripts/klorofil-common.js')}}"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+        <script>
+        @if(Session::has('sukses'))
+        toastr.success('{{Session::get('sukses')}}', 'Sukses')
+        @endif
+        </script>
         @yield('footer')
         
     </body>

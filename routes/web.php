@@ -23,8 +23,9 @@ Route::get('logout','AuthController@logout');
 Route::group(['middleware' => ['auth','CheckRole:admin']],function(){
     Route::get('/siswa','SiswaController@index');
     Route::post('/siswa/store','SiswaController@store');
-    Route::get('/siswa/{id}/edit','SiswaController@edit');
-    Route::post('/siswa/{id}/update','SiswaController@update');
+    // route model binding
+    Route::get('/siswa/{siswa}/edit','SiswaController@edit');
+    Route::post('/siswa/{siswa}/update','SiswaController@update');
     Route::get('siswa/{id}/delete','SiswaController@delete');
     Route::get('/siswa/{id}/profile','SiswaController@profile');
     Route::post('/siswa/{id}/addnilai','SiswaController@addNilai');
