@@ -3,7 +3,7 @@
         <nav>
             <ul class="nav">
                 <li>
-                    <a href="/" class="active">
+                    <a href="/dashboard" class="active">
                         <i class="lnr lnr-home"></i>
                         <span>Dashboard</span>
                     </a>
