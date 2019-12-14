@@ -18,6 +18,7 @@
         <link rel="stylesheet" href="{{asset('/admin/assets/css/main.css')}}">
         <!-- FOR DEMO PURPOSES ONLY. You should remove this in your project -->
         <link rel="stylesheet" href="{{asset('/admin/assets/css/demo.css')}}">
+        @yield('header')
         <!-- GOOGLE FONTS -->
         <link
             href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700"
