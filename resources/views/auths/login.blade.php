@@ -36,6 +36,11 @@
 							<div class="header">
 								<div class="logo text-center"><img src="{{asset('/admin/assets/img/logo-dark.png')}}" alt="Klorofil Logo"></div>
 								<p class="lead">Login to your account</p>
+								@if(session('error'))
+									<div class="alert alert-danger">
+										{{session('error')}}
+									</div>
+								@endif
 							</div>
 							<form class="form-auth-small" action="/postlogin" method="POST">
 							@csrf

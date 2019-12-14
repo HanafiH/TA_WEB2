@@ -55,7 +55,6 @@ class SiswaController extends Controller
             'email' => 'required|email|unique:users',
             'gender' => 'required',
             'agama' => 'required',
-            'avatar' => 'mimes:jpg,png'
         ]);
 
         //insert table users
