@@ -21,8 +21,8 @@
             href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700"
             rel="stylesheet">
         <!-- ICONS -->
-        <link rel="apple-touch-icon" sizes="76x76" href="{{asset('/admin/assets/img/apple-icon.png')}}">
-        <link rel="icon" type="image/png" sizes="96x96" href="{{asset('/admin/assets/img/favicon.png')}}">
+        <link rel="apple-touch-icon" sizes="76x76" href="{{asset('/admin/assets/{{asset('/frontend')}}/{{asset('/frontend')}}/img/apple-icon.png')}}">
+        <link rel="icon" type="image/png" sizes="96x96" href="{{asset('/admin/assets/{{asset('/frontend')}}/{{asset('/frontend')}}/img/favicon.png')}}">
 </head>
 
 <body>
@@ -34,7 +34,7 @@
 					<div class="left">
 						<div class="content">
 							<div class="header">
-								<div class="logo text-center"><img src="{{asset('/admin/assets/img/logo-dark.png')}}" alt="Klorofil Logo"></div>
+								<div class="logo text-center"><img src="{{asset('/admin/assets/{{asset('/frontend')}}/{{asset('/frontend')}}/img/logo-dark.png')}}" alt="Klorofil Logo"></div>
 								<p class="lead">Login to your account</p>
 								@if(session('error'))
 									<div class="alert alert-danger">
