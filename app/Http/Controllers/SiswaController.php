@@ -138,6 +138,8 @@ class SiswaController extends Controller
     public function delete($id){
         $siswa = Siswa::find($id);
         $siswa->delete();
+        $user = User::find($siswa->user_id);
+        $user->delete();
         return redirect('/siswa')->with('sukses','Data berhasil dihapus');
     }
 

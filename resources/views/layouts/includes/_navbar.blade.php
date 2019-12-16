@@ -1,7 +1,7 @@
 <nav class="navbar navbar-default navbar-fixed-top">
                 <div class="brand">
                     <a href="index.html"><img
-                        src="{{asset('/admin/assets/{{asset('/frontend')}}/{{asset('/frontend')}}/img/logo-dark.png')}}"
+                        src="{{asset('/admin/assets/img/logo-dark.png')}}"
                         alt="Klorofil Logo"
                         class="img-responsive logo"></a>
                 </div>
@@ -79,7 +79,7 @@
                                 </ul>
                             </li>
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="{{asset('/admin/assets/{{asset('/frontend')}}/{{asset('/frontend')}}/img/user.png')}}" class="img-circle" alt="Avatar">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="{{asset('/admin/assets/img/user.png')}}" class="img-circle" alt="Avatar">
                                     <span>{{auth()->user()->name}}</span>
                                     <i class="icon-submenu lnr lnr-chevron-down"></i>
                                 </a>

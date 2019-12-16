@@ -14,7 +14,7 @@ class AddNewColumnToSiswa extends Migration
     public function up()
     {
         Schema::table('siswa', function (Blueprint $table) {
-            $table->string('avatar')->after('alamat');
+            $table->string('avatar')->after('alamat')->nullable();
         });
     }
 
