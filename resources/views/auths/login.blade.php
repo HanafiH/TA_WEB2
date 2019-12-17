@@ -44,8 +44,9 @@
 							</div>
 							<form class="form-auth-small" action="/postlogin" method="POST">
 							@csrf
-							<P>Admin email : praktikumweb2@gmail.com</P>
-							<P>Admin password : rahasia</P>
+							<p>Seeding user Admin</p>
+							<P>Admin email : admin@gmail.com</P>
+							<P>Admin password : password</P>
 
 								<div class="form-group">
 									<label for="signin-email" class="control-label sr-only">Email</label>
